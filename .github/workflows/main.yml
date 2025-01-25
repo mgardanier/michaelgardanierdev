@@ -17,7 +17,7 @@ jobs:
       # Install dependencies
       - name: Install dependencies
         run: |
-          npm install -g marked  # Install the Marked.js library
+          npm install --no-bin-links marked  # Install marked without symlinks
 
       # Convert markdown to HTML
       - name: Convert markdown files to HTML

@@ -9,21 +9,6 @@
     <h1>My Markdown Page</h1>
     <div id="markdown-content"></div>
 
-    <script>
-        // Fetch the Markdown file from your S3 bucket
-        fetch('https://michael.gardanier.dev/markdown/my-file.md')
-            .then(response => response.text())
-            .then(markdown => {
-                // Convert the Markdown content to HTML
-                const htmlContent = marked(markdown);
-
-                // Inject the HTML content into the page
-                document.getElementById('markdown-content').innerHTML = htmlContent;
-            })
-            .catch(err => {
-                console.error('Error fetching markdown:', err);
-            });
-    </script>
 </body>
 
 </html>

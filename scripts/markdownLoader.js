@@ -2,7 +2,7 @@ class MarkdownLoader {
     constructor() {
         this.blogPostsContainer = document.getElementById('blog-posts');
         this.postsDirectory = '../posts/'; // Directory where markdown files are stored
-        this.debug = true; // Enable debug logging
+        this.debug = false; // Enable debug logging
     }
 
     log(message, error = false) {
@@ -63,7 +63,7 @@ class MarkdownLoader {
     }
 
     // Initialize the loader
-    init(postFilenames = ['2025_books.md']) {
+    init(postFilenames = ["2025_books.md"]) {
         this.log('Initializing MarkdownLoader');
 
         // Check if marked is already loaded
@@ -96,7 +96,7 @@ class MarkdownLoader {
 }
 
 // Wait for DOM to be ready before initializing
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const markdownLoader = new MarkdownLoader();
     markdownLoader.init();
 });

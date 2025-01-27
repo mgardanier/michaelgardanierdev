@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio & Blog</title>
+    <title>My Blog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
@@ -14,29 +14,28 @@
         <div class="sidebar">
             <h2>Navigation</h2>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="pages/blog.html">Blog</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#blog">Blog</a></li>
             </ul>
         </div>
 
         <div class="main-content">
-            <section class="hero">
-                <h1>Hi, I'm Michael Gardanier</h1>
-                </p>
-            </section>
+            <header>
+                <h1>My Blog</h1>
+                <p>Thoughts, tutorials, and insights from my journey.</p>
+            </header>
 
-            <section id="about" class="section">
-                <h2>About Me</h2>
-                <p>I'm a software engineer with expertise in [your skills]. I love working on solving tough problems and
-                    learning new things.</p>
-                <p>When I'm not working, I love preteneding to be a woodworker and building fpv drones.</p>
+            <section id="blog" class="section">
+                <div id="blog-posts"></div>
             </section>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../scripts/markdownLoader.js" defer></script>
 </body>
 <footer>
-    <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
+    <p>&copy; 2025 My Blog. All Rights Reserved.</p>
     <div class="social-links">
         <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn">
             <i class="fab fa-linkedin"></i>

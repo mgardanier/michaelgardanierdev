@@ -31,4 +31,6 @@ jobs:
           --exclude ".git/*" \
           --exclude "node_modules/*" \
           --exclude "*.json" \
+          --exclude ".husky/*" \
+          --exclude "README.md" \
           --exclude "build/*"

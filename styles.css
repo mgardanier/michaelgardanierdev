@@ -29,12 +29,13 @@ body {
 
 /* Ensure container fills available space */
 .container {
-    display: grid;
+    display: flex;
+    flex-direction: row;
     grid-template-columns: 250px 1fr;
-    flex: 1;
+    /* flex: 1; */
     /* Makes container fill the remaining space */
     max-width: var(--max-width);
-    margin: 0 auto;
+    padding-left: 0;
 }
 
 /* Sidebar Styles */

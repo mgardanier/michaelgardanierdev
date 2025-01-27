@@ -35,7 +35,6 @@ body {
     /* flex: 1; */
     /* Makes container fill the remaining space */
     max-width: var(--max-width);
-    padding-left: 0;
 }
 
 /* Sidebar Styles */

@@ -154,6 +154,13 @@ footer {
     color: var(--primary-color);
 }
 
+.profile-image img {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {

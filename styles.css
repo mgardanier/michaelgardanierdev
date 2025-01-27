@@ -154,6 +154,25 @@ footer {
     color: var(--primary-color);
 }
 
+/* Profile Styles */
+
+.social-links-profile {
+    display: flex;
+    gap: 1rem;
+    justify-content: left;
+    margin-top: 1rem;
+}
+
+.social-links-profile a {
+    color: var(--text-color);
+    font-size: 2rem;
+    transition: color 0.2s ease;
+}
+
+.social-links-profile a:hover {
+    color: var(--primary-color);
+}
+
 .profile-image img {
     width: 115px;
     height: 115px;

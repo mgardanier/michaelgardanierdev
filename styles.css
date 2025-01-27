@@ -131,7 +131,10 @@ footer {
     text-align: center;
     border-top: 1px solid #4b5563;
     margin-top: auto;
-    /* Ensures footer sticks to bottom */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
 }
 
 .social-links {

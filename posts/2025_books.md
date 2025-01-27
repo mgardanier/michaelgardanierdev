@@ -1,6 +1,8 @@
 # 2025 Books
 
-### Stop People Pleasing
+## Stop People Pleasing
+[![Cover](/assets/images/stop_people_pleasing.jpg)](https://www.amazon.com/Stop-People-Pleasing-Find-Power/dp/1668053543)
+
 This book was recommended to me by my sister after she felt it helped her understand a lot about her relationships.
 
 #### Favorite Thoughts

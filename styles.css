@@ -8,14 +8,11 @@
 
 /* Variables */
 :root {
-    --primary-color: #11594d;
+    --primary-color: #047866;
     --text-color: #d1d5db;
-    /* Light gray text */
     --bg-color: #1f2937;
-    /* Dark background */
     --sidebar-bg: #2d3748;
-    /* Dark sidebar background */
-    --accent-color: #3b82f6;
+    --accent-color: #c5e232;
     --max-width: 1200px;
 }
 
@@ -24,12 +21,18 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensures body takes full height */
 }
 
+/* Ensure container fills available space */
 .container {
     display: grid;
     grid-template-columns: 250px 1fr;
-    min-height: 100vh;
+    flex: 1;
+    /* Makes container fill the remaining space */
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -42,7 +45,6 @@ body {
     top: 0;
     height: 100vh;
     border-right: 1px solid #4b5563;
-    /* Dark border */
 }
 
 .sidebar h2 {
@@ -101,7 +103,6 @@ h2 {
 p {
     margin-bottom: 1.5rem;
     color: #e5e7eb;
-    /* Light gray text for better readability */
 }
 
 /* Blog Posts Container */
@@ -112,9 +113,7 @@ p {
 
 .blog-post {
     background-color: #374151;
-    /* Darker background for posts */
     color: var(--text-color);
-    /* Light text */
     border-radius: 0.5rem;
     padding: 1.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -131,7 +130,8 @@ footer {
     padding: 2rem;
     text-align: center;
     border-top: 1px solid #4b5563;
-    /* Dark footer border */
+    margin-top: auto;
+    /* Ensures footer sticks to bottom */
 }
 
 .social-links {
@@ -162,7 +162,6 @@ footer {
         height: auto;
         border-right: none;
         border-bottom: 1px solid #4b5563;
-        /* Dark border on mobile */
     }
 
     .main-content {

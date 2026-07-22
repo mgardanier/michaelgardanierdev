@@ -32,7 +32,9 @@ npm run preview
 When running the development server (`npm run dev`), you can use these keyboard shortcuts in your terminal to manage it:
 - **`r`** — Restarts the development server immediately (useful if newly created book files aren't showing up).
 - **`c`** — Clears the terminal logs.
-- **`o`** — Opens the development server URL in your browser.
+- **`o`** — Opens the development server URL in your browser
+You can run commands to stop the server using `npx`
+- `npx astro dev stop`
 
 ---
 

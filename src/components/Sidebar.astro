@@ -7,7 +7,7 @@ const { currentPath = '' } = Astro.props;
 
 const navItems = [
   { href: '/', label: 'Home' },
-  { href: '/books/', label: 'Books' },
+  { href: '/books', label: 'Books' },
 ];
 ---
 
@@ -19,7 +19,7 @@ const navItems = [
         <li>
           <a
             href={item.href}
-            class={currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'active' : ''}
+            class={currentPath === item.href || currentPath === item.href + '.html' || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'active' : ''}
           >
             {item.label}
           </a>

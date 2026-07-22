@@ -3,7 +3,6 @@ title: "The Courage to be Disliked"
 author: "Ichiro Kishimi, Fumitake Koga"
 year: 2026
 dateRead: 2026-02-15
-coverImage: "/assets/images/your_cover_image.jpg"
 amazonLink: "https://www.amazon.com/Courage-Be-Disliked-Phenomenon-Happiness/dp/1501197274"
 rating: 4.5
 ---

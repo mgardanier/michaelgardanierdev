@@ -30,13 +30,45 @@ npm run preview
 
 ---
 
+## 📝 Workflow for Adding Content or Making Changes
+
+Follow these steps whenever you write a new book review or update site pages:
+
+### Step 1: Create or Edit Files
+1. Copy `book-template.md` to `src/content/books/` (e.g., `src/content/books/2026-my-new-book.md`).
+2. Fill out the frontmatter fields (`title`, `author`, `year`, `dateRead`, `coverImage`, `amazonLink`, `rating`) and write your review notes.
+3. If adding new images, place them in `public/assets/images/`.
+
+### Step 2: Test Locally (Optional)
+Run `npm run dev` and open `http://localhost:4321/books` in your browser to verify how the new content looks.
+
+### Step 3: Stage, Commit, and Push
+> ⚠️ **Important**: Always use `git add .` to ensure any newly created `.md` files or image assets are staged before committing.
+
+```bash
+# 1. Stage all changes (including new files)
+git add .
+
+# 2. Commit your changes
+git commit -m "Add review for <Book Title>"
+
+# 3. Push to GitHub
+git push origin main
+```
+
+### Step 4: Automated Production Deployment
+Once pushed to `main`, GitHub Actions automatically:
+1. Runs `npm ci` and `npm run build`.
+2. Syncs the compiled `dist/` directory to AWS S3.
+3. Your changes will be live at [https://michael.gardanier.dev](https://michael.gardanier.dev) within 1-2 minutes!
+
+---
+
 ## 📚 Book Reviews & Year Pages
 
-Book reviews are organized into dedicated yearly pages (e.g. `/books/2025`, `/books/2026`). The main `/books` route automatically redirects to the latest year page.
+Book reviews are organized into dedicated yearly pages (e.g., `/books/2025`, `/books/2026`). The main `/books` route displays the latest year's reading list directly.
 
-### Adding New Book Reviews
-
-To add a new book review, create a Markdown file in `src/content/books/` (e.g. `src/content/books/2026-book-title.md`):
+### Frontmatter Schema
 
 ```markdown
 ---
@@ -55,8 +87,6 @@ Write a short review or paragraph about your thoughts on the book.
 * Key takeaway 1
 * Key takeaway 2
 ```
-
-Astro automatically generates dedicated routes (`/books/<year>`) with tabbed year navigation pills for switching between years.
 
 ---
 

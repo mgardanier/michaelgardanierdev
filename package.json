@@ -3,6 +3,14 @@
     "husky": "^8.0.0"
   },
   "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
     "prepare": "husky"
+  },
+  "dependencies": {
+    "astro": "^7.1.3"
   }
 }

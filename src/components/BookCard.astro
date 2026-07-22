@@ -1,0 +1,47 @@
+---
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  book: CollectionEntry<'books'>;
+}
+
+const { book } = Astro.props;
+const { Content } = await render(book);
+const { title, author, coverImage, amazonLink, rating } = book.data;
+---
+
+<article class="book-card">
+  <div class="book-header">
+    {coverImage && (
+      amazonLink ? (
+        <a href={amazonLink} target="_blank" rel="noopener noreferrer">
+          <img src={coverImage} alt={`Cover of ${title}`} class="book-cover" />
+        </a>
+      ) : (
+        <img src={coverImage} alt={`Cover of ${title}`} class="book-cover" />
+      )
+    )}
+    <div class="book-info">
+      <h3>
+        {amazonLink ? (
+          <a href={amazonLink} target="_blank" rel="noopener noreferrer">
+            {title}
+          </a>
+        ) : (
+          title
+        )}
+      </h3>
+      {author && <p class="book-author">by {author}</p>}
+      {rating && (
+        <div class="book-rating" aria-label={`Rating: ${rating} out of 5 stars`}>
+          {'★'.repeat(rating)}{'☆'.repeat(5 - rating)}
+        </div>
+      )}
+    </div>
+  </div>
+
+  <div class="book-content">
+    <Content />
+  </div>
+</article>

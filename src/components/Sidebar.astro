@@ -1,0 +1,30 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '' } = Astro.props;
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/books', label: 'Books' },
+];
+---
+
+<aside class="sidebar">
+  <h2>Navigation</h2>
+  <ul>
+    {
+      navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class={currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'active' : ''}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</aside>

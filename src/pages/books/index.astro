@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+
+const allBooks = await getCollection('books', ({ data }) => !data.draft);
+const years = Array.from(new Set(allBooks.map((b) => b.data.year))).sort((a, b) => b - a);
+
+const targetYear = years[0] || new Date().getFullYear();
+
+return Astro.redirect(`/books/${targetYear}`);
+---

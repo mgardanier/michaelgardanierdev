@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookCard from '../../components/BookCard.astro';
+
+export async function getStaticPaths() {
+  const allBooks = await getCollection('books', ({ data }) => !data.draft);
+  const yearsSet = new Set(allBooks.map((b) => b.data.year));
+  const years = Array.from(yearsSet).sort((a, b) => b - a);
+
+  return years.map((year) => {
+    const booksForYear = allBooks
+      .filter((b) => b.data.year === year)
+      .sort((a, b) => {
+        const dateA = a.data.dateRead ? new Date(a.data.dateRead).getTime() : 0;
+        const dateB = b.data.dateRead ? new Date(b.data.dateRead).getTime() : 0;
+        return dateB - dateA;
+      });
+
+    return {
+      params: { year: year.toString() },
+      props: { year, books: booksForYear, years },
+    };
+  });
+}
+
+const { year, books, years } = Astro.props;
+---
+
+<BaseLayout
+  title={`${year} Books Read | Michael Gardanier`}
+  description={`Books read by Michael Gardanier in ${year}`}
+>
+  <header>
+    <h1>{year} Books</h1>
+    <p>Books read and key takeaways from {year}.</p>
+  </header>
+
+  <nav class="year-tabs" aria-label="Book years navigation">
+    {
+      years.map((y) => (
+        <a
+          href={`/books/${y}`}
+          class={`year-tab ${y === year ? 'active' : ''}`}
+        >
+          {y} Books
+        </a>
+      ))
+    }
+  </nav>
+
+  <section class="section">
+    {
+      books.length === 0 ? (
+        <p>No book reviews added for {year} yet.</p>
+      ) : (
+        <div class="books-grid">
+          {books.map((book) => (
+            <BookCard book={book} />
+          ))}
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>

@@ -14,7 +14,7 @@ export async function getStaticPaths() {
       .sort((a, b) => {
         const dateA = a.data.dateRead ? new Date(a.data.dateRead).getTime() : 0;
         const dateB = b.data.dateRead ? new Date(b.data.dateRead).getTime() : 0;
-        return dateB - dateA;
+        return dateA - dateB;
       });
 
     return {

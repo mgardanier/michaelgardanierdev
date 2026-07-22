@@ -40,7 +40,7 @@ const { year, books, years } = Astro.props;
     {
       years.map((y) => (
         <a
-          href={`/books/${y}`}
+          href={`/books/${y}/`}
           class={`year-tab ${y === year ? 'active' : ''}`}
         >
           {y} Books

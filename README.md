@@ -28,6 +28,12 @@ npm run build
 npm run preview
 ```
 
+### Astro Dev Server Shortcuts
+When running the development server (`npm run dev`), you can use these keyboard shortcuts in your terminal to manage it:
+- **`r`** — Restarts the development server immediately (useful if newly created book files aren't showing up).
+- **`c`** — Clears the terminal logs.
+- **`o`** — Opens the development server URL in your browser.
+
 ---
 
 ## 📝 Workflow for Adding Content or Making Changes
